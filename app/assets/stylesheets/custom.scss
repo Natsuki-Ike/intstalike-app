@@ -84,9 +84,6 @@ footer {
       color: $gray-darker;
     }
   }
-  small {
-    float: left;
-  }
   ul {
     float: right;
     list-style: none;
@@ -94,5 +91,17 @@ footer {
       float: left;
       margin-left: 15px;
     }
+  }
+}
+
+/* home */
+.box {
+  display: inline-block;
+  padding:  60px;
+  margin:auto;
+  height: auto;
+  width: auto;
+  ul {
+    list-style: none;
   }
 }

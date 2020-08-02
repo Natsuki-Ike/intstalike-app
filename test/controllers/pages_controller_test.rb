@@ -12,5 +12,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "About | Instalike App"
   end
-
 end

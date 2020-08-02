@@ -14,3 +14,4 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
+    - 'node_modules/node-sass/src/libsass/extconf.rb'

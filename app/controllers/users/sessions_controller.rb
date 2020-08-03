@@ -1,4 +1,5 @@
-class SessionsController < ApplicationController
+class Users::SessionsController < Devise::SessionsController
+#class SessionsController < ApplicationController
 
   def callback
     auth = request.env["omniauth.auth"]

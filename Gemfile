@@ -3,6 +3,10 @@ ruby "2.6.6"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '6.0.3'
+gem 'font-awesome-rails'
+gem 'faker'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -15,9 +19,12 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
+  gem 'factory_bot_rails'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop-airbnb'
   gem 'rspec-rails', '~> 4.0.1'

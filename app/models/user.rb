@@ -1,8 +1,13 @@
 class User < ApplicationRecord
+  has_secure_password
+  validates :name, presence: true
+  validates :password, presence: true
+  validates :email, presence: true
+  validates :email, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i[facebook]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -23,4 +28,16 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def configure_sign_up_params?
+    false
+  end
+
+  # has_secure_password
+  #
+  # validates :name, presence: true, length: { maximum: 30 }
+  # validates :password, presence: true
+  # validates :email, presence: true
+  # validates :email, uniqueness: true
+
 end

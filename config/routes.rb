@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root 'pages#home'
-  get 'pages/home'
-  get 'pages/about'
+  get    '/about',   to: 'pages#about'
+  root   'pages#home'
+
   devise_for :users, :controllers => {
+    :omniauth_callbacks => 'users/omniauth_callbacks',
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions',
-    :omniauth_callbacks => 'users/omniauth_callbacks'
+    :sessions => 'users/sessions'
   }
 
   devise_scope :user do
-    get "sign_in", :to => "users/sessions#new"
-    get "sign_out", :to => "users/sessions#destroy"
+    get "user/:id", :to => "users/registrations#detail"
+    get "signup",   :to => "users/registrations#new"
+    get "login",    :to => "users/sessions#new"
+    get 'logout',   :to => "devise/sessions#destroy"
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    # get "/users/sign_out",   :to => "users/sessions#destroy"
+    #get 'logout' => 'devise/sessions#destroy'
   end
 end

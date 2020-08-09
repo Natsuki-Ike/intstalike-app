@@ -2,12 +2,16 @@
     <%= image_tag("collage_photo", alt: "Collage photo", width: "400px") %>
 </div>
 <div class="box">
-  <ul>
-    <li><%= image_tag("instalike_logo", alt: "Instalike logo", width: "150px") %></li>
-    <li>フォームタグ</li>
-    <li>フォームタグ</li>
-    <li>フォームタグ</li>
-    <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
-    <li>フォームタグ</li>
-  </ul>
+    <p><%= image_tag("instalike_logo", alt: "Instalike logo", width: "150px") %></p>
+    <p><%= link_to "ログイン", user_session_path, method: :get %></p>
+    <p><%= link_to "新規登録", new_user_registration_path %></p>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <p><%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %></p>
+    <% if user_signed_in? %>
+      <%= link_to 'ユーザー編集', edit_user_registration_path %> |
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path %> |
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
 </div>

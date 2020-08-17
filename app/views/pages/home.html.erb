@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box img">
     <%= image_tag("collage_photo", alt: "Collage photo", width: "400px") %>
 </div>
 <div class="box">
@@ -7,11 +7,8 @@
     <p><%= link_to "新規登録", new_user_registration_path %></p>
     <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <p><%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %></p>
-    <% if user_signed_in? %>
-      <%= link_to 'ユーザー編集', edit_user_registration_path %> |
-      <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %> |
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+
+    <p><%= link_to "写真投稿", new_path %></p>
+    <p><%= link_to "写真一覧", show_path %></p>
+    <p><%= link_to "ユーザー一覧", users_path %></p>
 </div>

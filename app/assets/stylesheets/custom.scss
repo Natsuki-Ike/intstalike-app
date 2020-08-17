@@ -8,7 +8,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 section {
@@ -97,14 +97,17 @@ footer {
 /* home */
 .box {
   display: inline-block;
-  padding:  60px;
-  margin:auto;
-  height: auto;
-  width: auto;
+  vertical-align: top;
+  padding: 80px;
+  margin-top: 20px;
   ul {
     list-style: none;
     li {
       margin-bottom: 10px;
     }
   }
+}
+
+.img {
+
 }

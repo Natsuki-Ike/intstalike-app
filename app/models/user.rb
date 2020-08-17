@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
   has_secure_password
   validates :name, presence: true
   validates :password, presence: true
@@ -32,12 +35,5 @@ class User < ApplicationRecord
   def configure_sign_up_params?
     false
   end
-
-  # has_secure_password
-  #
-  # validates :name, presence: true, length: { maximum: 30 }
-  # validates :password, presence: true
-  # validates :email, presence: true
-  # validates :email, uniqueness: true
 
 end

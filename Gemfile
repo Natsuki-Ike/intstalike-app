@@ -3,7 +3,9 @@ ruby "2.6.6"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '6.0.3'
-gem 'font-awesome-rails'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog-aws'
 gem 'faker'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
@@ -19,7 +21,6 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
-gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 group :development, :test do

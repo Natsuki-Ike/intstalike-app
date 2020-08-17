@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get    '/about',   to: 'pages#about'
   root   'pages#home'
+  get    '/about',   to: 'pages#about'
+  get    '/mypage',  to: 'users#mypage'
+  get    '/show',    to: 'photos#show'
+  get    '/new',     to: 'photos#new'
+  get "users/show" => "users#show"
+
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => 'users/omniauth_callbacks',
@@ -9,12 +14,15 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get "signup",   :to => "users/registrations#new"
-    get "login",    :to => "users/sessions#new"
-    get 'logout',   :to => "devise/sessions#destroy"
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    # get "/users/sign_out",   :to => "users/sessions#destroy"
-    #get 'logout' => 'devise/sessions#destroy'
+    get "user/:id",   :to => "users/registrations#detail"
+    get "signup",     :to => "users/registrations#new"
+    get "login",      :to => "users/sessions#new"
+    get "logout",     :to => "devise/sessions#destroy"
+    get "/users/sign_out" => 'devise/sessions#destroy'
+    get "user/edit",  :to => "users/registrations#edit"
   end
+
+  resources :topics
+  #resources :users, only: [:show]
+  resources :users, :only => [:index, :show]
 end

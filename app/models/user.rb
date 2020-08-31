@@ -1,10 +1,11 @@
 class User < ApplicationRecord
 
+  has_many :photos
+  has_many :posts
   mount_uploader :image, ImageUploader
+  attr_accessor :current_password
 
-  has_secure_password
   validates :name, presence: true
-  validates :password, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
   # Include default devise modules. Others available are:

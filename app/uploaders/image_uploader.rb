@@ -12,16 +12,30 @@ class ImageUploader < CarrierWave::Uploader::Base
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
 
-    # デフォルト画像は1200x5000に収まるようリサイズ
-
-    # サムネイル画像
+      # サムネイルを生成する設定
     version :thumb do
-       process resize_to_fill: [100, 100]
+      process :resize_to_limit => [300, 300]
+    end
+
+    version :thumb100 do
+      process :resize_to_fill => [200, 200, gravity = ::Magick::CenterGravity]
+    end
+
+    version :thumb30 do
+      process :resize_to_limit => [30, 30]
+    end
+
+    version :square do
+      process :resize_to_fill => [100, 100]
     end
 
     # 許可する画像の拡張子
     def extension_whitelist
        %w(jpg jpeg gif png)
+    end
+
+    def size_range
+      1..10.megabytes
     end
 
     # 保存するファイルの命名規則

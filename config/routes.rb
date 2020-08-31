@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+
   root   'pages#home'
   get    '/about',   to: 'pages#about'
   get    '/mypage',  to: 'users#mypage'
-  get    '/show',    to: 'photos#show'
-  get    '/new',     to: 'photos#new'
   get "users/show" => "users#show"
+  # get '/users/:id', to: 'users#show', as: :users_show
 
 
   devise_for :users, :controllers => {
@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :topics
-  #resources :users, only: [:show]
   resources :users, :only => [:index, :show]
+  resources :posts
 end

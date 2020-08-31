@@ -2,12 +2,15 @@ unless Rails.env.development? || Rails.env.test?
   CarrierWave.configure do |config|
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: 'AKIASQ6OS7QUWUEHXLG4',
-      aws_secret_access_key: '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',
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       region: 'ap-northeast-1'
     }
 
     config.fog_directory  = 'instalike-photo'
     config.cache_storage = :fog
+    config.validate_unique_filename = false
+    config.validate_filename_format = false
+    config.validate_remote_net_url_format = false
   end
 end

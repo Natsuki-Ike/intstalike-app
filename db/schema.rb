@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_030014) do
+ActiveRecord::Schema.define(version: 2020_08_30_051632) do
 
   create_table "photos", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "description"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,6 +55,11 @@ ActiveRecord::Schema.define(version: 2020_08_14_030014) do
     t.string "uid"
     t.string "provider"
     t.string "image"
+    t.string "fullname"
+    t.string "website"
+    t.string "phone_number"
+    t.string "self_introduction", limit: 500
+    t.integer "sex", default: 0, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

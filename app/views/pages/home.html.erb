@@ -5,10 +5,11 @@
     <p><%= image_tag("instalike_logo", alt: "Instalike logo", width: "150px") %></p>
     <p><%= link_to "ログイン", user_session_path, method: :get %></p>
     <p><%= link_to "新規登録", new_user_registration_path %></p>
-    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <p><%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %></p>
 
-    <p><%= link_to "写真投稿", new_path %></p>
-    <p><%= link_to "写真一覧", show_path %></p>
+    
+    <p><%= link_to "写真一覧", posts_path %></p>
     <p><%= link_to "ユーザー一覧", users_path %></p>
+
+
 </div>

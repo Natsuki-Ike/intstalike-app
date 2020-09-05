@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def new
     if user_signed_in?
       @post = Post.new
+      #user_id: @current_user.id
     else
       redirect_to login_path, info: 'ログインして下さい'
     end
@@ -14,11 +15,16 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path, success: '投稿に成功しました'
+      redirect_to user_path(current_user), success: '投稿に成功しました'
     else
       flash.now[:danger] = '投稿に失敗しました'
       render :new
     end
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
 

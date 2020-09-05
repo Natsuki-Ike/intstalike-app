@@ -8,8 +8,14 @@
           <li><%= link_to "写真投稿", new_post_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "ログイン", 'user_session_path' %></li>
+          <li><%= link_to "ログイン", user_session_path, method: :get %></li>
         <% end %>
+        <li><dl class="searchbox">
+          <%= search_form_for @search do |f| %>
+            <dt><%= f.search_field :description_cont %></dt>
+            <dd><%= f.submit class: 'search-btn' %></dd>
+          <% end %>
+          </dl></li>
       </ul>
     </nav>
   </div>

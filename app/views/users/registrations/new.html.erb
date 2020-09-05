@@ -6,13 +6,18 @@
     <div class="col-md-6 col-md-offset-3">
 
       <div class="field">
-        <%= f.label :image %><br/>
+        <%= f.label :image, 'アイコン画像' %><br/>
         <%= f.file_field :image %>
       </div>
 
       <div class="field">
-        <%= f.label :name %><br />
+        <%= f.label :name, 'ユーザーネーム' %><br />
         <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :fullname, '氏名' %>
+        <%= f.text_field :fullname, autofocus: true %>
       </div>
 
       <div class="field">
@@ -34,11 +39,12 @@
       </div>
     </div>
   </div>
-
+  <br/>
+  <br/>
   <div class="row">
   <div class="col-md-3 col-md-offset-3">
       <div class="actions">
-        <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
+        <%= f.submit "新規登録", class: "btn btn-lg btn-primary" %>
       </div>
   </div>
 </div>

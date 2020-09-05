@@ -1,9 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :except=>[:home, :about]
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search
+
+  def set_search
+    #@search = Article.search(params[:q])
+    # @search = Article.ransack(params[:q]) #ransackメソッド推奨
+    # @search_articles = @search.result.page(params[:page])
+    @search = Post.ransack(params[:q])
+    @posts = @search.result
+  end
 
   def after_sign_in_path_for(user)
-    "/user/#{current_user.id}"
+    "/users/#{current_user.id}"
   end
 
   def after_sign_out_path_for(user)

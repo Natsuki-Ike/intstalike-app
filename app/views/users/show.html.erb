@@ -1,12 +1,26 @@
 <% provide(:title, @user.name) %>
-<h1>My page (<%= @user.name %>)</h1>
 
-<% if @user.image? %>
-  <%= image_tag @user.image.url(:thumb100) %>
-<% end %>
-<h3>ユーザー名</h3>
-<%= @user.name %>
+<div class="showbox">
+  <div class="userbox">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url(:square) %>
+    <% end %>
+    <p><%= @user.name %></p>
+    <p>フォロー、フォロワー</p>
+    <p>自己紹介</p>
 
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<p><%= link_to "プロフィール編集", edit_user_registration_path %></p>
+    <% if user_signed_in? %>
+      <%= link_to "プロフィール編集", edit_user_registration_path %>
+    <% end %>
+  </div>
+
+  <div class="user_postbox">
+    <div class="imagbox">
+    <% @user.posts.each do |post| %>
+    <tr>
+      <td><%= image_tag post.image_url(:thumb100).to_s %></td>
+    </tr>
+    <% end %>
+    </div>
+  </div>
+</div>

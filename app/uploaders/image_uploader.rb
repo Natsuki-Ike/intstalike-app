@@ -22,7 +22,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
 
     version :thumb30 do
-      process :resize_to_limit => [30, 30]
+      process :resize_to_fill => [100, 100, gravity = ::Magick::CenterGravity]
     end
 
     version :square do

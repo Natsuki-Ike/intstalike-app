@@ -14,7 +14,7 @@ unless Rails.env.development? || Rails.env.test?
     config.fog_directory  = 'instalike-photo'
     config.cache_storage = :fog
     config.validate_unique_filename = false
-    config.validate_filename_format = false
+    # config.validate_filename_format = false
     config.validate_remote_net_url_format = false
   end
 end

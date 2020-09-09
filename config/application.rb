@@ -18,3 +18,5 @@ module InstalikeApp
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
 end
+
+Rails.application.config.assets.unknown_asset_fallback = true

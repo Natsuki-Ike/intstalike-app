@@ -1,7 +1,9 @@
 class User < ApplicationRecord
 
-  has_many :photos
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+  has_many :comments
   mount_uploader :image, ImageUploader
   attr_accessor :current_password
 
@@ -39,6 +41,10 @@ class User < ApplicationRecord
 
   def posts
     return Post.where(user_id: self.id)
+  end
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
   end
 
 end

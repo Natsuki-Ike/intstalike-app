@@ -8,7 +8,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 30px;
+  padding-top: 90px;
 }
 
 section {
@@ -98,8 +98,8 @@ footer {
 .box {
   display: inline-block;
   vertical-align: top;
-  padding: 80px;
-  margin-top: 20px;
+  padding: 0 80 80 80px;
+  margin-right: 40px;
   ul {
     list-style: none;
     li {

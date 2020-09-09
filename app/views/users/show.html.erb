@@ -17,9 +17,17 @@
   <div class="user_postbox">
     <div class="imagbox">
     <% @user.posts.each do |post| %>
-    <tr>
-      <td><%= image_tag post.image_url(:thumb100).to_s %></td>
-    </tr>
+      <tr>
+        <td>
+          <%= link_to post_path do %>
+          <%= image_tag post.image_url(:thumb100).to_s %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <% @user.liked_posts.each do |post| %>
+      <%= post.user.email %>
+      <%= post.content %>
     <% end %>
     </div>
   </div>

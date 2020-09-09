@@ -20,9 +20,13 @@ Rails.application.routes.draw do
     get "logout",     :to => "devise/sessions#destroy"
     get "/users/sign_out" => 'devise/sessions#destroy'
     get "user/edit",  :to => "users/registrations#edit"
+    get '/users/password', to: 'devise/passwords#new'
   end
 
   resources :topics
   resources :users, :only => [:index, :show]
-  resources :posts
+  resources :posts, :only => [:index, :show, :new, :create, :show] do
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
+  end
 end

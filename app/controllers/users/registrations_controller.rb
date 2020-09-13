@@ -157,7 +157,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :fullname, :self_introduction, :website])
     end
 
     private

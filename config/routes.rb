@@ -19,14 +19,25 @@ Rails.application.routes.draw do
     get "login",      :to => "users/sessions#new"
     get "logout",     :to => "devise/sessions#destroy"
     get "/users/sign_out" => 'devise/sessions#destroy'
-    get "user/edit",  :to => "users/registrations#edit"
+    # get "user/edit",  :to => "users/registrations#edit"
     get '/users/password', to: 'devise/passwords#new'
   end
 
   resources :topics
   resources :users, :only => [:index, :show]
+  resources :relationships,       only: [:create, :destroy]
   resources :posts, :only => [:index, :show, :new, :create, :show] do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
+  end
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resource :user, only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
   end
 end

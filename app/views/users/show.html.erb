@@ -1,0 +1,39 @@
+<% provide(:title, @user.name) %>
+
+<div class="showbox">
+  <div class="userbox">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url(:square) %>
+    <% end %>
+    <p><%= @user.name %></p>
+    <% @user ||= current_user %>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+    <p><%= @user.self_introduction %></p>
+
+
+    <%= render 'follow_form' if user_signed_in? %>
+
+    <% if user_signed_in? && current_user %>
+      <%= link_to "プロフィール編集", edit_user_registration_path %>
+    <% end %>
+  </div>
+
+  <div class="user_postbox">
+    <div class="imagbox">
+    <% @user.posts.each do |post| %>
+      <tr>
+        <td>
+          <%= link_to post_path(post) do %>
+          <%= image_tag post.image_url(:thumb100).to_s %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <% @user.liked_posts.each do |post| %>
+      <%=  %>
+    <% end %>
+    </div>
+  </div>
+</div>

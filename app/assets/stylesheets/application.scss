@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ // Bootstrap Sass
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* 検索ボックス */
+dl.searchbox{
+  width: 200px;
+  position:relative;
+  background-color:#fff;
+  border-radius:2px;
+  margin-top: 10px;
+}
+dl.searchbox dt{
+  padding: 0px;
+}
+dl.searchbox dt input{
+  width:70%;
+  height:10px;
+  line-height:0px;
+  background:none;
+  border:none;
+}
+dl.searchbox dd{
+  position:absolute;
+  top:0px;
+  right:0px;
+  width:30%;
+  height:10px;
+}
+.search-btn{
+  display:block;
+  background:#5fad35;
+  width:100%;
+  height:10px;
+  line-height:17px;
+  border:none;
+  border-radius: 2px;
+  color:#FFF;
+}
+
+.search-btn:hover {
+  background:#228B22;
+}

@@ -1,0 +1,41 @@
+// .box {
+//   width: auto;
+//   height: auto;
+//   margin: auto;
+//   border-radius: 4px;
+//   border: 1px #fff solid;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// h1 {
+//   font-weight: 400;
+//   font-size: 28px;
+//   line-height: 1.2;
+//   margin-bottom: 10px;
+//   padding-bottom: 4px;
+//   color: #111111;
+// }
+//
+// /* mixins */
+//
+// @mixin box_sizing {
+//   -moz-box-sizing: border-box;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+//
+// /* forms */
+//
+// input, textarea, select, .uneditable-input {
+//   border: 1px solid #bbb;
+//   width: 100%;
+//   padding: 10px;
+//   margin-bottom: 15px;
+//   @include box_sizing;
+// }
+//
+// input {
+//   height: auto !important;
+// }

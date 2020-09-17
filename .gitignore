@@ -41,3 +41,23 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
+
+/helpers/*
+!/application_helper.rb
+
+/stylesheets/comments.scss
+/stylesheets/likes.scss
+/stylesheets/pages.scss
+/stylesheets/posts.scss
+/stylesheets/relationships.scss
+
+/views/comments
+/views/likes
+
+/initializers/application_controller_renderer.rb
+/initializers/backtrace_silencers.rb
+/initializers/content_security_policy.rb
+/initializers/inflections.rb
+/initializers/mime_types.rb
+
+/locales/en.yml

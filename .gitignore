@@ -62,19 +62,13 @@ yarn-debug.log*
 
 /locales/en.yml
 
-.git
+git/
 
-/app/channels
-/app/jobs
+channels/
+jobs/
 
-.lib
-
-.log
-
-.node_modules
-
-.storage
-
-.tmp
-
-.vendor
+lib/
+log/
+storage/
+tmp/
+vendor/

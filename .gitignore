@@ -46,23 +46,23 @@ yarn-debug.log*
 !/application_helper.rb
 
 comments.scss
-/stylesheets/likes.scss
-/stylesheets/pages.scss
-/stylesheets/posts.scss
-/stylesheets/relationships.scss
+likes.scss
+pages.scss
+posts.scss
+relationships.scss
 
-/views/comments
-/views/likes
+/comments
+/likes
 
-/initializers/application_controller_renderer.rb
-/initializers/backtrace_silencers.rb
-/initializers/content_security_policy.rb
-/initializers/inflections.rb
-/initializers/mime_types.rb
+application_controller_renderer.rb
+backtrace_silencers.rb
+content_security_policy.rb
+inflections.rb
+mime_types.rb
 
-/locales/en.yml
+en.yml
 
-.git/
+.git
 
 channels/
 jobs/

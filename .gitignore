@@ -51,8 +51,6 @@ pages.scss
 posts.scss
 relationships.scss
 
-comments/
-likes/
 
 application_controller_renderer.rb
 backtrace_silencers.rb
@@ -72,3 +70,21 @@ log/
 storage/
 
 vendor/
+
+bin/
+
+
+.ruby-version
+babel.config.js
+config.ru
+
+development.sqlite3
+schema.rb
+test.sqlite3
+test.sqlite3-0
+test.sqlite3-1
+
+/webpack/
+boot.rb
+cable.rb
+credential.yml.enc

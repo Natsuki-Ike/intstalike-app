@@ -51,8 +51,8 @@ pages.scss
 posts.scss
 relationships.scss
 
-/comments
-/likes
+comments/
+likes/
 
 application_controller_renderer.rb
 backtrace_silencers.rb
@@ -62,7 +62,7 @@ mime_types.rb
 
 en.yml
 
-.git
+.git/
 
 channels/
 jobs/

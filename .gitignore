@@ -45,7 +45,7 @@ yarn-debug.log*
 /helpers/*
 !/application_helper.rb
 
-/stylesheets/comments.scss
+comments.scss
 /stylesheets/likes.scss
 /stylesheets/pages.scss
 /stylesheets/posts.scss

@@ -74,6 +74,7 @@ vendor/
 bin/
 
 
+
 .ruby-version
 babel.config.js
 config.ru

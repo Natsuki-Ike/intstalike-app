@@ -4,6 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+
+
 # Ignore bundler config.
 /.bundle
 
@@ -27,14 +29,13 @@
 /storage/*
 !/storage/.keep
 
-/public/assets
+
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/packs
-/public/packs-test
+
 /node_modules
 /yarn-error.log
 yarn-debug.log*
@@ -42,52 +43,4 @@ yarn-debug.log*
 
 .env
 
-/helpers/*
-!/application_helper.rb
-
-comments.scss
-likes.scss
-pages.scss
-posts.scss
-relationships.scss
-
-
-application_controller_renderer.rb
-backtrace_silencers.rb
-content_security_policy.rb
-inflections.rb
-mime_types.rb
-
-en.yml
-
-.git/
-
-channels/
-jobs/
-
-lib/
-log/
-storage/
-
-vendor/
-
-bin/
-
-
-
-.ruby-version
-babel.config.js
-config.ru
-
-development.sqlite3
-schema.rb
-test.sqlite3
-test.sqlite3-0
-test.sqlite3-1
-
-/webpack/
-boot.rb
-cable.rb
-credential.yml.enc
-
-/public/* 
+/public/*

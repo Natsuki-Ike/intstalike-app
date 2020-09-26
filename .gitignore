@@ -44,3 +44,27 @@ yarn-debug.log*
 .env
 
 /public/*
+
+/tmp/*
+
+/spec/factories/
+/spec/fearures/
+/spec/helpers/
+/spec/requests/
+/spec/support/
+/spec/views
+
+/test/channels/
+/test/mailers/
+/test/system/
+/test/integration/
+/test/fixtures/
+/test/models/
+
+/storage/
+
+/log/
+
+/lib/
+
+.browserslistrc
